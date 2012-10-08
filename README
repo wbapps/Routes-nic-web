@@ -1,0 +1,7 @@
+Esqueleto para un proyecto en Django
+
+- python manage.py collectstatic
+- python manage.py syncdb
+- chown -R apache:apache data
+- cp *.conf /etc/httpd/conf.d/
+- service httpd reload

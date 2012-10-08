@@ -1,7 +1,9 @@
-Esqueleto para un proyecto en Django
+﻿Rutas de Managua
 
-- python manage.py collectstatic
-- python manage.py syncdb
-- chown -R apache:apache data
-- cp *.conf /etc/httpd/conf.d/
-- service httpd reload
+- Agregar Rutas
+- Ver puntos principales de cada Ruta
+- Ver trayectoria completa de una ruta
+- Ver recorrido en google maps de una Ruta (pendiente)
+- Buscar por puntos que retornen las rutas cercanas (pendiente)
+
+Nota: Algunos puntos no están correctos

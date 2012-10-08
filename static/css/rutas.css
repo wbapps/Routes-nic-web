@@ -1,0 +1,11 @@
+﻿
+
+html, body {
+	height: 100%;
+	background: transparent url(../img/bg.png); 
+}
+
+body{
+	padding-top: 60px;
+	padding-bottom: 40px;
+}

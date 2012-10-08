@@ -7,3 +7,7 @@
 - Buscar por puntos que retornen las rutas cercanas (pendiente)
 
 Nota: Algunos puntos no están correctos
+
+Dependencias:
+
+django-bootstrap-toolkit

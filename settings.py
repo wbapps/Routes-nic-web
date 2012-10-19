@@ -2,7 +2,7 @@
 from django.conf import  global_settings as DEFAULT_SETTINGS
 import os
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 SITE_ROOT = os.path.join( os.path.dirname( os.path.realpath(__file__) ) ,'..' )
@@ -68,7 +68,7 @@ STATIC_URL = '/assets/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-   os.path.join(os.path.dirname(__file__), '../public/assets'),
+    os.path.join(os.path.dirname(__file__), 'public/assets'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -79,8 +79,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-	'dajaxice.finders.DajaxiceFinder',
-#   'django.contrib.staticfiles.finders.DefaultStorageFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody. FIXME
@@ -90,7 +89,7 @@ SECRET_KEY = 'hackme'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-	'django.template.loaders.eggs.Loader',
+#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -118,8 +117,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-	'dajaxice',
-    'dajax',
 	'app',
 )
 
@@ -129,7 +126,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     "django.core.context_processors.static",
-	"django.core.context_processors.request",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages"
 

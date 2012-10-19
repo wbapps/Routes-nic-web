@@ -10,4 +10,5 @@ Nota: Algunos puntos no están correctos
 
 Dependencias:
 
-django-bootstrap-toolkit
+django-dajaxice
+django-dajax

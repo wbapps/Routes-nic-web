@@ -1,0 +1,9 @@
+﻿{% extends 'base.html' %}
+{% block puntos %}
+{% for p in puntos %}
+<ul>
+	<li>{{ p.punto_id.punto }}</li>
+</ul>
+{% endfor %}
+
+{% endblock %}

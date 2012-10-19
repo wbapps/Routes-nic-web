@@ -33,4 +33,4 @@ logs
 
 #local config
 local.py
-data.db
+#data.db

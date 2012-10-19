@@ -130,6 +130,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages"
 
     )
+	
+FIXTURE_DIRS = (
+   os.path.join(SITE_ROOT,'app/migrations/'),
+)
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.

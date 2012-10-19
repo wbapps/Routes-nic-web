@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 	'dajaxice',
     'dajax',
+	'south',
 	'app',
 )
 

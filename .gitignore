@@ -23,7 +23,7 @@ build/buildinfo.properties
 build/config/buildinfo.properties
 
 #south migrations
-migrations
+#migrations
 
 #log files
 *.log.*

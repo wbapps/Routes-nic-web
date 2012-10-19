@@ -10,5 +10,6 @@ Nota: Algunos puntos no están correctos
 
 Dependencias:
 
+south
 django-dajaxice
 django-dajax

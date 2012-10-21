@@ -3,6 +3,7 @@ from django.db import models
 
 class Ruta(models.Model):
 	ruta		= models.CharField(max_length=60,unique=True)
+	activo		= models.BooleanField(default=True)
 	def __unicode__(self):		
 		return self.ruta
 

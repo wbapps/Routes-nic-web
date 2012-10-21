@@ -1,9 +1,8 @@
 ﻿{% extends 'base.html' %}
-{% block puntos %}
-{% for p in puntos %}
-<ul>
-	<li>{{ p.punto_id.punto }}</li>
-</ul>
-{% endfor %}
-
+{% block lista_puntos %}
+    <ul class="unstyled">
+        {% for p in puntos %}
+            <li><span class="label label-info ltpts">{{ p.punto_id.punto }}</span></li>
+        {% endfor %}
+    </ul>
 {% endblock %}

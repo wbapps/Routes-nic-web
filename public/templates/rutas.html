@@ -2,21 +2,20 @@
 	{% block lista_rutas %}
 		{% if rutas %}
 			{% for r in rutas %}
-				<div href="#ruta_{{ r.id }}" class="span1 ruta well well-small" data-toggle="modal" onclick="Dajaxice.app.puntosInteres(Dajax.process, {'id_ruta':{{ r.id }}})">{{ r.ruta }}</div>
+				<div href="#ruta" class="span1 ruta well well-small" data-toggle="modal" onclick="puntosInteres_ruta({{ r.id }})">{{ r.ruta }}</div>
 			{% endfor %}
 		{% else %}
 			<div class="span1 ruta well well-small">No hay rutas</div>
 		{% endif %}
-
-		{% for i in rutas %}
-			<div id="ruta_{{ i.id }}" class="modal hide fade in" style="display: none;" >
+		
+			<div id="ruta" class="modal hide fade in" style="display: none;" >
 				<div class="modal-header">
 					<a class="close" data-dismiss="modal">×</a>
-					<h3>Puntos de interés de ruta <strong>{{ i.ruta }}</strong></h3>
+					<h3>Puntos principales de ruta <span id="ruta_name"></span></h3>
 				</div>  
 				<div class="modal-body">
 					<ul>
-						<li id="result_{{ i.id }}"></li>
+						<li id="result"></li>
 						
 					</ul>
 				</div>
@@ -24,5 +23,5 @@
 					<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
 				</div>  
 			</div>
-		{% endfor %}
+		
 {% endblock %}

@@ -1,54 +1,16 @@
 
 var Dajaxice = {
 
-    
-    
-
-    
-
-    
     app: {
     
-    puntosInteres: function(callback_function, argv, custom_settings){
-        Dajaxice.call('app.puntosInteres', 'POST', callback_function, argv, custom_settings);
+        puntosInteres: function(callback_function, argv, custom_settings){
+            Dajaxice.call('app.puntosInteres', 'POST', callback_function, argv, custom_settings);
+        },
+
+        nombreRuta: function(callback_function, argv, custom_settings){
+            Dajaxice.call('app.nombreRuta', 'POST', callback_function, argv, custom_settings);
+        },    
     },
-
-    pagination: function(callback_function, argv, custom_settings){
-        Dajaxice.call('examples.pagination', 'POST', callback_function, argv, custom_settings);
-    },
-
-    updatecombo: function(callback_function, argv, custom_settings){
-        Dajaxice.call('examples.updatecombo', 'POST', callback_function, argv, custom_settings);
-    },
-
-    flickr_save: function(callback_function, argv, custom_settings){
-        Dajaxice.call('examples.flickr_save', 'POST', callback_function, argv, custom_settings);
-    },
-
-    dajaxice_example: function(callback_function, argv, custom_settings){
-        Dajaxice.call('examples.dajaxice_example', 'POST', callback_function, argv, custom_settings);
-    },
-
-    send_form: function(callback_function, argv, custom_settings){
-        Dajaxice.call('examples.send_form', 'POST', callback_function, argv, custom_settings);
-    },
-
-    args_example: function(callback_function, argv, custom_settings){
-        Dajaxice.call('examples.args_example', 'POST', callback_function, argv, custom_settings);
-    },
-
-    multiply: function(callback_function, argv, custom_settings){
-        Dajaxice.call('examples.multiply', 'POST', callback_function, argv, custom_settings);
-    },
-
-    randomize: function(callback_function, argv, custom_settings){
-        Dajaxice.call('examples.randomize', 'POST', callback_function, argv, custom_settings);
-    }
-
-
-    
-    }
-,
 
     get_cookie: function(name)
     {

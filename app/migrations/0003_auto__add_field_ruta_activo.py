@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*-
 import datetime
 from south.db import db
-from south.v2 import DataMigration
+from south.v2 import SchemaMigration
 from django.db import models
 
-class Migration(DataMigration):
+
+class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        from django.core.management import call_command
-        call_command("loaddata", "initial_data.json")
+        # Adding field 'Ruta.activo'
+        db.add_column('app_ruta', 'activo',
+                      self.gf('django.db.models.fields.BooleanField')(default=True),
+                      keep_default=False)
+
 
     def backwards(self, orm):
-        "Write your backwards methods here."
+        # Deleting field 'Ruta.activo'
+        db.delete_column('app_ruta', 'activo')
+
 
     models = {
         'app.punto': {
@@ -31,6 +37,7 @@ class Migration(DataMigration):
         },
         'app.ruta': {
             'Meta': {'object_name': 'Ruta'},
+            'activo': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'ruta': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '60'})
         },
@@ -44,4 +51,3 @@ class Migration(DataMigration):
     }
 
     complete_apps = ['app']
-    symmetrical = True

@@ -7,9 +7,15 @@ from models import Ruta, Punto, Trayectoria, Recorrido
 def puntosInteres(request, id_ruta):
     dajax 	= Dajax()
     puntos 	= Trayectoria.objects.filter(ruta_id=id_ruta)
-    out		= []
+    out		= []    
     for punto in puntos:
     	out.append("<li>%s</li>" % punto.punto_id.punto)
-    result = "#result_%s" % id_ruta
-    dajax.assign(result,'innerHTML', ''.join(out))
+    dajax.assign("#result",'innerHTML', out)
+    return dajax.json()
+
+@dajaxice_register
+def nombreRuta(request, id_ruta):
+    dajax 	= Dajax()
+    nombre 	= Ruta.objects.get(ruta_id=id_ruta)     
+    dajax.assign("#ruta_name",'innerHTML', nombre.ruta)
     return dajax.json()

@@ -8,11 +8,12 @@ class Ruta(models.Model):
 		return self.ruta
 
 class Punto(models.Model):   
-	punto		= models.CharField(max_length=60,unique=True)
-	lat			= models.DecimalField(max_digits=10, decimal_places=6)
-	lon			= models.DecimalField(max_digits=10, decimal_places=6)
-	def __unicode__(self):		
-		return self.punto
+    punto		= models.CharField(max_length=60,unique=True)
+    lat			= models.DecimalField(max_digits=10, decimal_places=6)
+    lon			= models.DecimalField(max_digits=10, decimal_places=6)
+    ruta        = models.ManyToManyField(Ruta, related_name="puntos")
+    def __unicode__(self):
+        return self.punto
 
 class Trayectoria(models.Model):
 	ruta_id		= models.ForeignKey(Ruta)

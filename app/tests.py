@@ -1,16 +1,6 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
+from django import forms
 
-Replace this with more appropriate tests for your application.
-"""
-
-from django.test import TestCase
-
-
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+class buscarRutasForm(forms.Form):
+    query = forms.CharField(widget=forms.TextInput())
+    def clean(self):
+        return self.cleaned_data

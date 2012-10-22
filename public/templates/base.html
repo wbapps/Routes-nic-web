@@ -12,7 +12,6 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <link href="../assets/css/bootstrap.css" rel="stylesheet">
-        <link href="../assets/css/scrollbar.css" rel="stylesheet">
         <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="../assets/css/rutas.css" rel="stylesheet">        
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
@@ -23,14 +22,14 @@
         <script src="../assets/dajaxice/jquery.dajax.core.js"></script>
         <script src="../assets/js/ajax.js"></script>
 
-        <script type="text/javascript">
-            var map;
+        <script type="text/javascript">            
             $(document).ready(function(){    
-                map = new GMaps({
-                    div: '#map',
+                new GMaps({
+                    div: '#map_canvas',
                     lat: 12.136677,
                     lng: -86.255563,
-                    zoom: 13
+                    zoom: 13,
+                    width: '100%'
                 });
             });
         </script>
@@ -69,7 +68,7 @@
                 </div>
                 <div class="span8 well">
                     <div class="popin">
-                        <div id="map"></div>
+                        <div id="map_canvas"></div>
                     </div>
                 </div>
             </div>

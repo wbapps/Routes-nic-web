@@ -10,12 +10,14 @@ def puntosInteres(request, id_ruta):
     out		= []    
     for punto in puntos:
     	out.append("<li>%s</li>" % punto.punto_id.punto)
-    dajax.assign("#result",'innerHTML', out)
+    dajax.assign("#puntosInteres",'innerHTML', out)
     return dajax.json()
 
 @dajaxice_register
 def nombreRuta(request, id_ruta):
     dajax 	= Dajax()
-    nombre 	= Ruta.objects.get(ruta_id=id_ruta)     
-    dajax.assign("#ruta_name",'innerHTML', nombre.ruta)
+    nombre 	= Ruta.objects.get(id=id_ruta) 
+    out     = []    
+    out.append("%s" % nombre)
+    dajax.assign("#nombreRuta",'innerHTML', out)
     return dajax.json()

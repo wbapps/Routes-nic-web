@@ -2,7 +2,7 @@
 {% block lista_puntos %}
     <ul class="unstyled">
         {% for p in puntos %}
-            <li><span class="label label-info ltpts">{{ p.punto_id.punto }}</span></li>
+            <div id="ltpts">{{ p.punto_id.punto }}</div>
         {% endfor %}
     </ul>
 {% endblock %}

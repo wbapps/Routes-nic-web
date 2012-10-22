@@ -1,12 +1,10 @@
 
 var Dajaxice = {
-
-    app: {
     
+    app: {    
         puntosInteres: function(callback_function, argv, custom_settings){
             Dajaxice.call('app.puntosInteres', 'POST', callback_function, argv, custom_settings);
         },
-
         nombreRuta: function(callback_function, argv, custom_settings){
             Dajaxice.call('app.nombreRuta', 'POST', callback_function, argv, custom_settings);
         },    

@@ -8,6 +8,10 @@
         </div>
 	</form>
     <hr />
-        {{ info }}
+        {% for i in info %}
+        <ul class="unstyled">
+            <li id="ltpts"> {{ i }} </li>
+        </ul>
+        {% endfor %}
     <hr />
 {% endblock %}

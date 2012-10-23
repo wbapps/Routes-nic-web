@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from forms import buscarRutasForm
 from models import Ruta, Trayectoria, Punto
+from django.db.models import Q
 
 def rutas_view(request):
 	rutas = Ruta.objects.filter(activo=True)
@@ -19,8 +20,9 @@ def buscar_view(request):
     if request.method == "POST":
         form = buscarRutasForm(request.POST)
         if form.is_valid():
-            query = form.cleaned_data['query']	            
-            info = "Query: %s" % query
+            query = form.cleaned_data['query']
+            p = Punto.objects.filter(Q(punto__icontains=query))	 
+            info = Trayectoria.objects.filter(punto_id=p)
         else:
             info = "informacion con datos incorrectos"			
     form = buscarRutasForm()

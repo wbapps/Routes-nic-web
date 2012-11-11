@@ -6,7 +6,7 @@ admin.autodiscover()
 dajaxice_autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^', include('app.urls')),	
+    url(r'^', include('app.urls')),	
     url(r'^admin/', include(admin.site.urls)), 
-	url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),	
+    url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),	
 )

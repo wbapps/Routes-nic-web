@@ -1,4 +1,4 @@
 @echo off
 
-python manage.py runserver --insecure
+cmd.exe /K python manage.py runserver --insecure
 pause

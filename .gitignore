@@ -9,7 +9,6 @@
 *.vi
 *~
 *.pyc
-*.lnk
 
 # OS or Editor folders
 .DS_Store
@@ -18,7 +17,6 @@
 .settings
 nbproject
 thumbs.db
-virtual_env
 
 # build script local files
 build/buildinfo.properties

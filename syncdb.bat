@@ -1,5 +1,5 @@
 @echo off
 
-cmd.exe python /K manage.py syncdb
+python manage.py syncdb
 
 pause

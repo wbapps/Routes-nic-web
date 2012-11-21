@@ -19,7 +19,7 @@
 .settings
 nbproject
 thumbs.db
-env
+virtual_env
 
 # build script local files
 build/buildinfo.properties

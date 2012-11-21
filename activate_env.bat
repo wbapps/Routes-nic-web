@@ -1,3 +1,3 @@
 @echo off
 
-cmd.exe /K env\Scripts\activate.bat
+cmd.exe /K virtual_env\Scripts\activate.bat

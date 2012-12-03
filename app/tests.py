@@ -1,6 +1,4 @@
-from django import forms
+from models import Ruta, Trayectoria, Punto
+from django.db.models import Count
 
-class buscarRutasForm(forms.Form):
-    query = forms.CharField(widget=forms.TextInput())
-    def clean(self):
-        return self.cleaned_data
+Punto.objects.filter(ruta__id=10).filter(ruta__id=59)

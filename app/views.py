@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from forms import buscarRutasForm
 from models import Ruta, Trayectoria, Punto
-from django.db.models import Q
+from django.db.models import Count
 
 def rutas_view(request):
 	rutas = Ruta.objects.filter(activo=True)
@@ -16,15 +16,20 @@ def puntos_view(request):
 	return render_to_response('puntos.html',ctx,context_instance=RequestContext(request))
 
 def buscar_view(request):
-    info = "Inicializando"
-    if request.method == "POST":
-        form = buscarRutasForm(request.POST)
-        if form.is_valid():
-            query = form.cleaned_data['query']
-            p = Punto.objects.filter(Q(punto__icontains=query))	 
-            info = Trayectoria.objects.filter(punto_id=p)
-        else:
-            info = "informacion con datos incorrectos"			
+    #request.POST.getlist('puntos')
+
+    #BUSCAR n RUTAS
+    '''def obtener_puntos(model_class, m2m_field, ids):
+        query = model_class.objects.annotate(count=Count(m2m_field)).filter(count=len(ids))
+        for _id in ids:
+            query = query.filter(id=_id)
+            return query
+    info = obtener_puntos(Punto, 'ruta', query)'''
+    #info =Punto.objects.annotate(count=Count('ruta')).filter(id=10).filter(id=59).filter(count=2)
+    info = Punto.objects.filter(ruta__id=10).filter(ruta__id=59)
+    
+        #else:
+            #info = ["informacion con datos incorrectos",]		
     form = buscarRutasForm()
     ctx = {'form':form, 'info':info}
     return render_to_response('buscar.html',ctx,context_instance=RequestContext(request))

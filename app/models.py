@@ -13,7 +13,7 @@ class Punto(models.Model):
     lon			= models.DecimalField(max_digits=10, decimal_places=6)
     ruta        = models.ManyToManyField(Ruta, related_name="puntos")
     def __unicode__(self):
-        return self.punto
+        return self.ruta
 
 class Trayectoria(models.Model):
 	ruta_id		= models.ForeignKey(Ruta)

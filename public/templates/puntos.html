@@ -1,8 +1,0 @@
-﻿{% extends 'base.html' %}
-{% block lista_puntos %}
-    <ul class="unstyled">
-        {% for p in puntos %}
-            <div id="ltpts">{{ p.punto_id.punto }}</div>
-        {% endfor %}
-    </ul>
-{% endblock %}

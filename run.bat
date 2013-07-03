@@ -1,0 +1,4 @@
+echo
+npm start
+
+pause

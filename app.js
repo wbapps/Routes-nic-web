@@ -4,7 +4,8 @@
  */
 
 var express = require('express')
-  , http = require('http');
+  , http = require('http')
+  , controllers = require('./controllers');
 
 var app = express();
 
@@ -19,9 +20,7 @@ app.configure (function (){
   app.use("/public", express.static(__dirname + "/public"));
 });
 
-app.get("/", function (req, res){
-    res.render("home");
-});
+app.get("/", controllers.pages.home);
 
 app.get("/hi", function (req, res){
    var message = [

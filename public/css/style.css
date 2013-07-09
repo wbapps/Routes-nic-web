@@ -14,6 +14,7 @@ html, body, #map_canvas{
 #buscar{
     position:relative;
     z-index:2;
+    width:50%;
     left:10%;
     top:-90%;
 }
